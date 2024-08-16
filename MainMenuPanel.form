@@ -18,30 +18,10 @@
         <constraints border-constraint="North"/>
         <properties>
           <background color="-15987698"/>
+          <enabled value="true"/>
         </properties>
         <border type="none"/>
         <children>
-          <component id="7f025" class="javax.swing.JLabel" binding="mainMenuAuthorLbl">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag top="5" left="5" bottom="50" right="5" weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <alignmentY value="0.0"/>
-              <autoscrolls value="false"/>
-              <focusable value="true"/>
-              <font name="JetBrains Mono" size="22" style="1"/>
-              <foreground color="-5328458"/>
-              <horizontalAlignment value="0"/>
-              <horizontalTextPosition value="0"/>
-              <opaque value="false"/>
-              <text value="Roe Dizon" noi18n="true"/>
-              <visible value="true"/>
-            </properties>
-            <clientProperties>
-              <html.disable class="java.lang.Boolean" value="false"/>
-            </clientProperties>
-          </component>
           <component id="ea1c" class="javax.swing.JLabel" binding="mainMenuTitleLbl">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -51,7 +31,7 @@
               <background color="-5328458"/>
               <enabled value="true"/>
               <font name="Comic Sans MS" size="76" style="1"/>
-              <foreground color="-5328458"/>
+              <foreground color="-2104859"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="4"/>
               <inheritsPopupMenu value="false"/>
@@ -63,6 +43,29 @@
               <verticalAlignment value="0"/>
               <verticalTextPosition value="3"/>
             </properties>
+          </component>
+          <component id="7f025" class="javax.swing.JLabel" binding="mainMenuAuthorLbl">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="5" left="5" bottom="50" right="5" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <alignmentY value="0.0"/>
+              <autoscrolls value="false"/>
+              <background color="-13470673"/>
+              <enabled value="true"/>
+              <focusable value="false"/>
+              <font name="JetBrains Mono" size="19" style="1"/>
+              <foreground color="-2104859"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <opaque value="false"/>
+              <text value="Roe Dizon" noi18n="true"/>
+              <visible value="true"/>
+            </properties>
+            <clientProperties>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
           </component>
         </children>
       </grid>
@@ -88,7 +91,7 @@
               <defaultCapable value="false"/>
               <focusPainted value="false"/>
               <font name="Droid Sans Mono" size="28" style="1"/>
-              <foreground color="-5328458"/>
+              <foreground color="-2104859"/>
               <label value="Play" noi18n="true"/>
               <maximumSize width="96" height="50"/>
               <preferredSize width="96" height="40"/>

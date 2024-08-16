@@ -16,7 +16,7 @@ public class BlackjackController {
 
             @Override
             public void mouseExited(MouseEvent e) {
-                mainMenuPanel.setPlayBtnColor(new Color(223,225,229));
+                mainMenuPanel.setPlayBtnColor(new Color(174,177,182));
             }
         });
 

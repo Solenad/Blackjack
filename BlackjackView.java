@@ -1,24 +1,38 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 
-public class BlackjackView {
-    private final JFrame mainFrame;
-
-
+public class BlackjackView extends JFrame{
+    private final MainMenuPanel mainMenuPanel;
+    private final JPanel gamePanel;
 
 
     public BlackjackView() {
-        this.mainFrame = new JFrame("Blackjack");
-        this.mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.mainFrame.setSize(800, 600);
+        setTitle("Blackjack");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(800, 600);
+        setResizable(false);
+        getContentPane().setLayout(new CardLayout());
 
-        mainGridLayout mainMenu = new mainGridLayout();
-        this.mainFrame.setContentPane(mainMenu.getMainMenuPanel());
+        this.mainMenuPanel = new MainMenuPanel();
+        add(this.mainMenuPanel.getMainMenuPanel(), "MainMenuPanel");
 
+        this.gamePanel = new GamePanel();
+        add(this.gamePanel, "GamePanel");
 
+        setVisible(true);
+    }
 
-        this.mainFrame.setVisible(true);
+    public MainMenuPanel getMainMenuPanel() {
+        return this.mainMenuPanel;
+    }
+
+    public JPanel getGamePanel() {
+        return this.gamePanel;
+    }
+
+    public void showPanel(String panelName) {
+        CardLayout layout = (CardLayout) getContentPane().getLayout();
+        layout.show(getContentPane(), panelName);
     }
 }

@@ -11,6 +11,8 @@ public class GamePanel extends JPanel {
         setPreferredSize(new Dimension(600, 427));
         setBackground(new Color(12,12,14));
 
+        JLabel roe = new JLabel();
+
         JPanel playerHandPanel = new JPanel(new BorderLayout());
         playerHandPanel.setOpaque(false);
         playerHandPanel.setLayout(new BorderLayout(5, 5 ));

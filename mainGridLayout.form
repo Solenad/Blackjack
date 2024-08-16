@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="mainGridLayout">
+  <grid id="27dc6" binding="mainMenuPanel" layout-manager="BorderLayout" hgap="0" vgap="5">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-15987698"/>
+      <focusable value="true"/>
+      <preferredSize width="600" height="427"/>
+    </properties>
+    <border type="none" title-justification="2" title-position="2">
+      <font/>
+      <title-color color="-2104859"/>
+    </border>
+    <children>
+      <grid id="e6d35" binding="mainMenuHeader" layout-manager="GridBagLayout">
+        <constraints border-constraint="North"/>
+        <properties>
+          <background color="-15987698"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7f025" class="javax.swing.JLabel" binding="mainMenuAuthorLbl">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="5" left="5" bottom="50" right="5" weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <alignmentY value="0.0"/>
+              <autoscrolls value="false"/>
+              <focusable value="true"/>
+              <font name="JetBrains Mono" size="22" style="1"/>
+              <foreground color="-5328458"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <opaque value="false"/>
+              <text value="Roe Dizon" noi18n="true"/>
+              <visible value="true"/>
+            </properties>
+            <clientProperties>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
+          </component>
+          <component id="ea1c" class="javax.swing.JLabel" binding="mainMenuTitleLbl">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="50" left="0" bottom="0" right="0" weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-5328458"/>
+              <enabled value="true"/>
+              <font name="Comic Sans MS" size="76" style="1"/>
+              <foreground color="-5328458"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="4"/>
+              <inheritsPopupMenu value="false"/>
+              <maximumSize width="100" height="50"/>
+              <minimumSize width="30" height="50"/>
+              <opaque value="false"/>
+              <preferredSize width="400" height="120"/>
+              <text value="Blackjack" noi18n="true"/>
+              <verticalAlignment value="0"/>
+              <verticalTextPosition value="3"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="ba39d" binding="mainMenuButtonPanel" layout-manager="FlowLayout" hgap="1" vgap="1" flow-align="1">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-15987698"/>
+          <font name="Droid Sans Mono" size="16" style="1"/>
+          <maximumSize width="200" height="100"/>
+          <preferredSize width="300" height="200"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <vspacer id="80955">
+            <constraints/>
+          </vspacer>
+          <component id="373b7" class="javax.swing.JButton" binding="playBtn">
+            <constraints/>
+            <properties>
+              <background color="-8552573"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="false"/>
+              <defaultCapable value="false"/>
+              <focusPainted value="false"/>
+              <font name="Droid Sans Mono" size="28" style="1"/>
+              <label value="Play" noi18n="true"/>
+              <maximumSize width="96" height="50"/>
+              <preferredSize width="96" height="40"/>
+              <text value="Play" noi18n="true"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="4ac3e">
+        <constraints border-constraint="South"/>
+      </vspacer>
+      <hspacer id="3a466">
+        <constraints border-constraint="West"/>
+      </hspacer>
+      <hspacer id="6188">
+        <constraints border-constraint="East"/>
+      </hspacer>
+    </children>
+  </grid>
+</form>

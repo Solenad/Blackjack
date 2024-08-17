@@ -60,6 +60,10 @@ public class GameModel {
         }
     }
 
+    // finish here
+    public int randCardVal() {
+
+    }
 
     /*
     public final void addPlayer(String name) {

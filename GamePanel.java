@@ -14,6 +14,7 @@ public class GamePanel extends JPanel {
     private final JPanel playerSectionPanel, playerHandPanel, playerControlPanel;
     private final JPanel dealerSectionPanel;
     private JButton startBtn;
+    private ArrayList<JLabel> cardImageList = new ArrayList<>();
 
     public GamePanel() {
         setLayout(new BorderLayout(0, 5 ));
@@ -54,9 +55,6 @@ public class GamePanel extends JPanel {
         dealerHandPanel.setLayout(new BoxLayout(dealerHandPanel, BoxLayout.X_AXIS));
         dealerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
 
-        // labels
-        cardImageLbl = new JLabel();
-        playerSectionPanel.add(cardImageLbl, BorderLayout.SOUTH);
 
         playerTitleLbl = new JLabel("Player");
         playerTitleLbl.setFont(new Font("Monospaced", Font.BOLD, 25));
@@ -99,16 +97,25 @@ public class GamePanel extends JPanel {
         });
     }
 
-    public void setImage(int cardNum) {
+    public void addImage(int cardNum) {
         ImageIcon cardImage;
-
-        playerSectionPanel.remove(cardImageLbl);
+        JLabel cardImageLbl;
 
         cardImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("card" + cardNum + ".png")));
         cardImageLbl = new JLabel(cardImage);
 
         playerHandPanel.add(cardImageLbl);
         playerHandPanel.add(Box.createHorizontalStrut(20));
+        cardImageList.add(cardImageLbl);
+    }
+
+    public void removeAllImage() {
+        int i;
+
+        for (i = 0; i < cardImageList.size(); i++) {
+            playerHandPanel.remove(cardImageList.get(i));
+            cardImageList.remove(i);
+        }
     }
 
     public void slowDisplayLabel(JLabel label, int msDelay) {

@@ -7,6 +7,7 @@ public class BlackjackController {
 
     public BlackjackController(BlackjackView blackjackView, GameModel gameModel) {
         MainMenuPanel mainMenuPanel = blackjackView.getMainMenuPanel();
+        GamePanel gamePanel = (GamePanel) blackjackView.getGamePanel();
 
         mainMenuPanel.setPlayBtnMouseListener(new MouseAdapter() {
             @Override
@@ -16,13 +17,15 @@ public class BlackjackController {
 
             @Override
             public void mouseExited(MouseEvent e) {
-                mainMenuPanel.setPlayBtnColor(new Color(174,177,182));
+                mainMenuPanel.setPlayBtnColor(new Color(223,225,229));
             }
         });
 
         mainMenuPanel.setPlayBtnListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                gamePanel.slowDisplayLabel(gamePanel.getPlayerTitleLbl(), 100);
+                gamePanel.slowDisplayLabel(gamePanel.getDealerTitleLbl(), 100);
                 blackjackView.showPanel("GamePanel");
             }
         });

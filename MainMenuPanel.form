@@ -55,7 +55,7 @@
               <background color="-13470673"/>
               <enabled value="true"/>
               <focusable value="false"/>
-              <font name="JetBrains Mono" size="19" style="1"/>
+              <font name="HoloLens MDL2 Assets" size="18" style="1"/>
               <foreground color="-2104859"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
@@ -90,8 +90,9 @@
               <contentAreaFilled value="false"/>
               <defaultCapable value="false"/>
               <focusPainted value="false"/>
-              <font name="Droid Sans Mono" size="28" style="1"/>
+              <font name="Lucida Sans" size="28" style="1"/>
               <foreground color="-2104859"/>
+              <hideActionText value="false"/>
               <label value="Play" noi18n="true"/>
               <maximumSize width="96" height="50"/>
               <preferredSize width="96" height="40"/>

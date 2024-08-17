@@ -1,9 +1,16 @@
 import javax.swing.*;
-import javax.swing.border.Border;
+import javax.swing.Timer;
+import javax.swing.border.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.*;
 
 
 public class GamePanel extends JPanel {
+    private JLabel cardImageLbl, playerTitleLbl, dealerTitleLbl;
+    private final JPanel playerSectionPanel, playerHandPanel;
+    private final JPanel dealerSectionPanel;
 
     public GamePanel() {
         setLayout(new BorderLayout(0, 5 ));
@@ -11,38 +18,91 @@ public class GamePanel extends JPanel {
         setPreferredSize(new Dimension(600, 427));
         setBackground(new Color(12,12,14));
 
-        JLabel roe = new JLabel();
+        // panel initializations
+        playerSectionPanel = new JPanel(new BorderLayout());
+        playerSectionPanel.setOpaque(false);
+        playerSectionPanel.setLayout(new BorderLayout(5, 5 ));
+        playerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        playerSectionPanel.setBorder(BorderFactory.createEmptyBorder(0, 30, 30, 20));
 
-        JPanel playerHandPanel = new JPanel(new BorderLayout());
+        dealerSectionPanel = new JPanel(new BorderLayout());
+        dealerSectionPanel.setOpaque(false);
+        dealerSectionPanel.setLayout(new BorderLayout(5, 5 ));
+        dealerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        dealerSectionPanel.setBorder(BorderFactory.createEmptyBorder(30, 20, 0, 30));
+
+        playerHandPanel = new JPanel();
+        playerHandPanel.setLayout(new BoxLayout(playerHandPanel, BoxLayout.X_AXIS));
+        playerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
         playerHandPanel.setOpaque(false);
-        playerHandPanel.setLayout(new BorderLayout(5, 5 ));
-        playerHandPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        playerHandPanel.setBorder(BorderFactory.createEmptyBorder(0, 30, 30, 0));
+        playerHandPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        playerSectionPanel.add(playerHandPanel, BorderLayout.CENTER);
 
-        JPanel dealerHandPanel = new JPanel(new BorderLayout());
-        dealerHandPanel.setOpaque(false);
-        dealerHandPanel.setLayout(new BorderLayout(5, 5 ));
-        dealerHandPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        dealerHandPanel.setBorder(BorderFactory.createEmptyBorder(0, 30, 30, 0));
+        JPanel dealerHandPanel = new JPanel();
+        dealerHandPanel.setLayout(new BoxLayout(dealerHandPanel, BoxLayout.X_AXIS));
+        dealerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
 
-        JLabel playerTitleLbl = new JLabel("Player");
+        cardImageLbl = new JLabel();
+        playerSectionPanel.add(cardImageLbl, BorderLayout.SOUTH);
+
+        playerTitleLbl = new JLabel("Player");
         playerTitleLbl.setFont(new Font("Monospaced", Font.BOLD, 25));
         playerTitleLbl.setForeground(new Color(223,225,229));
         playerTitleLbl.setAlignmentX(Component.LEFT_ALIGNMENT);
         playerTitleLbl.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-        playerHandPanel.add(playerTitleLbl, BorderLayout.WEST);
+        playerSectionPanel.add(playerTitleLbl, BorderLayout.WEST);
 
 
-
-        JLabel dealerTitleLbl = new JLabel("Dealer");
+        dealerTitleLbl = new JLabel("Dealer");
         dealerTitleLbl.setFont(new Font("Monospaced", Font.BOLD, 25));
         dealerTitleLbl.setForeground(new Color(223,225,229));
         dealerTitleLbl.setAlignmentX(Component.RIGHT_ALIGNMENT);
         dealerTitleLbl.setAlignmentY(Component.TOP_ALIGNMENT);
-        dealerHandPanel.add(dealerTitleLbl, BorderLayout.WEST);
+        dealerSectionPanel.add(dealerTitleLbl, BorderLayout.EAST);
 
-        add(playerHandPanel, BorderLayout.SOUTH);
-        add(dealerHandPanel, BorderLayout.NORTH);
 
+        add(playerSectionPanel, BorderLayout.SOUTH);
+        add(dealerSectionPanel, BorderLayout.NORTH);
+    }
+
+    public void setImage(int cardNum) {
+        ImageIcon cardImage;
+
+        playerSectionPanel.remove(cardImageLbl);
+
+        cardImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("card" + cardNum + ".png")));
+        cardImageLbl = new JLabel(cardImage);
+
+        playerHandPanel.add(cardImageLbl);
+        playerHandPanel.add(Box.createHorizontalStrut(20));
+    }
+
+    public JLabel getPlayerTitleLbl() {
+        return playerTitleLbl;
+    }
+
+    public JLabel getDealerTitleLbl() {
+        return dealerTitleLbl;
+    }
+
+    public void slowDisplayLabel(JLabel label, int msDelay) {
+        final String labelText = label.getText();
+        label.setText("");
+
+        Timer timer = new Timer(msDelay, new ActionListener() {
+            int index = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (index < labelText.length()) {
+                    label.setText(label.getText() + labelText.charAt(index));
+                    this.index++;
+                }
+                else
+                    ((Timer) e.getSource()).stop();
+            }
+        });
+
+        timer.start();
     }
 }

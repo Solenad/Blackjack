@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.awt.image.ColorModel;
@@ -86,7 +87,7 @@ public class MainMenuPanel {
         mainMenuAuthorLbl.setBackground(new Color(-13470673));
         mainMenuAuthorLbl.setEnabled(true);
         mainMenuAuthorLbl.setFocusable(false);
-        Font mainMenuAuthorLblFont = this.$$$getFont$$$("JetBrains Mono", Font.BOLD, 19, mainMenuAuthorLbl.getFont());
+        Font mainMenuAuthorLblFont = this.$$$getFont$$$("HoloLens MDL2 Assets", Font.BOLD, 18, mainMenuAuthorLbl.getFont());
         if (mainMenuAuthorLblFont != null) mainMenuAuthorLbl.setFont(mainMenuAuthorLblFont);
         mainMenuAuthorLbl.setForeground(new Color(-2104859));
         mainMenuAuthorLbl.setHorizontalAlignment(0);
@@ -116,9 +117,10 @@ public class MainMenuPanel {
         playBtn.setContentAreaFilled(false);
         playBtn.setDefaultCapable(false);
         playBtn.setFocusPainted(false);
-        Font playBtnFont = this.$$$getFont$$$("Droid Sans Mono", Font.BOLD, 28, playBtn.getFont());
+        Font playBtnFont = this.$$$getFont$$$("Lucida Sans", Font.BOLD, 28, playBtn.getFont());
         if (playBtnFont != null) playBtn.setFont(playBtnFont);
         playBtn.setForeground(new Color(-2104859));
+        playBtn.setHideActionText(false);
         playBtn.setLabel("Play");
         playBtn.setMaximumSize(new Dimension(96, 50));
         playBtn.setPreferredSize(new Dimension(96, 40));
@@ -160,5 +162,6 @@ public class MainMenuPanel {
     public JComponent $$$getRootComponent$$$() {
         return mainMenuPanel;
     }
+
 
 }

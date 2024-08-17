@@ -14,6 +14,4 @@ public class Dealer extends Person {
         else
             return false;
     }
-
-
 }

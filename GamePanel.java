@@ -4,13 +4,16 @@ import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 
 
 public class GamePanel extends JPanel {
     private JLabel cardImageLbl, playerTitleLbl, dealerTitleLbl;
-    private final JPanel playerSectionPanel, playerHandPanel;
+    private final JPanel playerSectionPanel, playerHandPanel, playerControlPanel;
     private final JPanel dealerSectionPanel;
+    private JButton startBtn;
 
     public GamePanel() {
         setLayout(new BorderLayout(0, 5 ));
@@ -24,12 +27,7 @@ public class GamePanel extends JPanel {
         playerSectionPanel.setLayout(new BorderLayout(5, 5 ));
         playerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         playerSectionPanel.setBorder(BorderFactory.createEmptyBorder(0, 30, 30, 20));
-
-        dealerSectionPanel = new JPanel(new BorderLayout());
-        dealerSectionPanel.setOpaque(false);
-        dealerSectionPanel.setLayout(new BorderLayout(5, 5 ));
-        dealerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        dealerSectionPanel.setBorder(BorderFactory.createEmptyBorder(30, 20, 0, 30));
+        add(playerSectionPanel, BorderLayout.SOUTH);
 
         playerHandPanel = new JPanel();
         playerHandPanel.setLayout(new BoxLayout(playerHandPanel, BoxLayout.X_AXIS));
@@ -38,10 +36,25 @@ public class GamePanel extends JPanel {
         playerHandPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         playerSectionPanel.add(playerHandPanel, BorderLayout.CENTER);
 
+        playerControlPanel = new JPanel();
+        playerControlPanel.setLayout(new BoxLayout(playerControlPanel, BoxLayout.Y_AXIS));
+        playerControlPanel.setOpaque(false);
+        playerControlPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
+        playerControlPanel.add(Box.createVerticalGlue());
+        add(playerControlPanel, BorderLayout.EAST);
+
+        dealerSectionPanel = new JPanel(new BorderLayout());
+        dealerSectionPanel.setOpaque(false);
+        dealerSectionPanel.setLayout(new BorderLayout(5, 5 ));
+        dealerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        dealerSectionPanel.setBorder(BorderFactory.createEmptyBorder(30, 20, 0, 40));
+        add(dealerSectionPanel, BorderLayout.NORTH);
+
         JPanel dealerHandPanel = new JPanel();
         dealerHandPanel.setLayout(new BoxLayout(dealerHandPanel, BoxLayout.X_AXIS));
         dealerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
 
+        // labels
         cardImageLbl = new JLabel();
         playerSectionPanel.add(cardImageLbl, BorderLayout.SOUTH);
 
@@ -60,9 +73,30 @@ public class GamePanel extends JPanel {
         dealerTitleLbl.setAlignmentY(Component.TOP_ALIGNMENT);
         dealerSectionPanel.add(dealerTitleLbl, BorderLayout.EAST);
 
+        // buttons
+        startBtn = new JButton("Start");
+        startBtn.setBackground(getBackground());
+        startBtn.setContentAreaFilled(false);
+        startBtn.setBorderPainted(false);
+        startBtn.setFocusPainted(false);
+        startBtn.setFont(new Font("Monospaced", Font.BOLD, 25));
+        startBtn.setForeground(new Color(223,225,229));
+        startBtn.setMaximumSize(new Dimension(110, 40));
+        startBtn.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        playerControlPanel.add(startBtn);
+        playerControlPanel.add(Box.createVerticalStrut(40));
 
-        add(playerSectionPanel, BorderLayout.SOUTH);
-        add(dealerSectionPanel, BorderLayout.NORTH);
+
+
+        startBtn.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e) {
+                startBtn.setForeground(new Color(125,127,131));
+            }
+
+            public void mouseExited(MouseEvent e) {
+                startBtn.setForeground(new Color(223,225,229));
+            }
+        });
     }
 
     public void setImage(int cardNum) {
@@ -75,14 +109,6 @@ public class GamePanel extends JPanel {
 
         playerHandPanel.add(cardImageLbl);
         playerHandPanel.add(Box.createHorizontalStrut(20));
-    }
-
-    public JLabel getPlayerTitleLbl() {
-        return playerTitleLbl;
-    }
-
-    public JLabel getDealerTitleLbl() {
-        return dealerTitleLbl;
     }
 
     public void slowDisplayLabel(JLabel label, int msDelay) {
@@ -102,7 +128,18 @@ public class GamePanel extends JPanel {
                     ((Timer) e.getSource()).stop();
             }
         });
-
         timer.start();
+    }
+
+    public JLabel getPlayerTitleLbl() {
+        return playerTitleLbl;
+    }
+
+    public JLabel getDealerTitleLbl() {
+        return dealerTitleLbl;
+    }
+
+    public void setStartBtnActionListener(ActionListener E) {
+        startBtn.addActionListener(E);
     }
 }

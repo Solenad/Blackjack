@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.IntStream;
 
 
 public class GameModel {
@@ -8,7 +9,10 @@ public class GameModel {
     private Person dealer;
 
     public GameModel() {
+        this.player = new Player("Roe");
+        this.dealer = new Dealer("Dealer");
         setDeck();
+        setGame();
     }
 
     // 26 22
@@ -26,7 +30,7 @@ public class GameModel {
         return null;
     }
 
-    public final void setDeck() {
+    private void setDeck() {
         int i, j;
         Card tempCard;
 
@@ -38,6 +42,26 @@ public class GameModel {
         }
     }
 
+    private void setGame() {
+        int i = 0, cardValue1, cardValue2;
+        Random rand = new Random();
+        ArrayList<Integer> tempDeck = new ArrayList<>(IntStream.rangeClosed(1, 12).boxed().toList());
+
+        while (i < 2) {
+            cardValue1 = rand.nextInt(1, 12);
+            cardValue2 = rand.nextInt(1, 12);
+
+            if (tempDeck.contains(cardValue1) && tempDeck.contains(cardValue2)
+                && (cardValue1 != cardValue2)) {
+                player.addCard(new Card(cardValue1));
+                dealer.addCard(new Card(cardValue2));
+                i++;
+            }
+        }
+    }
+
+
+    /*
     public final void addPlayer(String name) {
         this.player = new Player(name);
     }
@@ -45,5 +69,5 @@ public class GameModel {
     public final void addDealer(String name) {
         this.dealer = new Player(name);
     }
-
+    */
 }

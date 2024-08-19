@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-class Person {
+public class Person {
 
     private final String name;
     private final ArrayList<Card> cardList = new ArrayList<>();
@@ -21,6 +21,14 @@ class Person {
             total += card.getCardValue();
 
         return total;
+    }
+
+    public final Card getCard(int index) {
+        return cardList.get(index);
+    }
+
+    public final ArrayList<Card> getCardList() {
+        return cardList;
     }
 
     public final String getName() {

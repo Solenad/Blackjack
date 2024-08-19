@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4d6b3c9-8b67-4f0e-b0d1-4a2ebcdd5433" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackjackController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlackjackView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dealer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Deck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenuPanel.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenuPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardImages/card9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Blackjack.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/BlackjackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/BlackjackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GameModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GameModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GamePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GamePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GamePanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/MainMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/MainMenuPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Blackjack/card1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Blackjack/card1.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2kk6mL67otvQY1wnKWS3RiRrAwV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Driver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/owner/OneDrive/Documents/GitHub/Blackjack/src&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/owner/OneDrive/Documents/GitHub/Blackjack/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4d6b3c9-8b67-4f0e-b0d1-4a2ebcdd5433" name="Changes" comment="" />
+      <created>1723815385991</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723815385991</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/src/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

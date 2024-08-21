@@ -23,6 +23,7 @@ public class BlackjackController {
             Dealer dealer = gameModel.getDealer();
             Player player = gameModel.getPlayer();
 
+            gameModel.setDeck();
             gameModel.setGame();
             gamePanel.getDealerTotalLbl().setText("Total: ? + " + dealer.getCard(1).getCardValue());
             gamePanel.getPlayerTotalLbl().setText("Total: " + player.getHandTotal());
@@ -35,11 +36,58 @@ public class BlackjackController {
             gamePanel.addImage("/cardImages/hideImage.png", gamePanel.getDealerHandPanel());
             gamePanel.addImage("/cardImages/card" + dealer.getCard(1).getCardValue() + ".png", gamePanel.getDealerHandPanel());
 
-            gamePanel.validate();
-            blackjackView.repaint();
+            gamePanel.slowDisplayLabel(gamePanel.getDealerTotalLbl(), 25);
+            gamePanel.slowDisplayLabel(gamePanel.getPlayerTotalLbl(), 25);
 
-            gamePanel.slowDisplayLabel(gamePanel.getDealerTotalLbl(), 50);
-            gamePanel.slowDisplayLabel(gamePanel.getPlayerTotalLbl(), 50);
+            gamePanel.validate();
+            gamePanel.repaint();
+        });
+
+        gamePanel.setExitBtnActionListener(e -> {
+            gameModel.clearAllList();
+            gamePanel.removeAllImage();
+            gamePanel.removeControl();
+            gamePanel.getGameStatusLbl().setText("");
+            blackjackView.showPanel("MainMenuPanel");
+            gamePanel.repaint();
+            gamePanel.revalidate();
+        });
+
+        gamePanel.setHitBtnActionListener(e -> {
+            Player player = gameModel.getPlayer();
+            Deck deck = gameModel.getDeck();
+
+            if (!deck.getCardList().isEmpty() && player.getHandTotal() <= 21) {
+                player.addCard(deck.drawCard());
+                gamePanel.getPlayerTotalLbl().setText("Total: " + player.getHandTotal());
+                gamePanel.addImage("/cardImages/card" + player.getCard(player.getCardList().size() - 1).getCardValue() + ".png", gamePanel.getPlayerHandPanel());
+
+                gamePanel.revalidate();
+                gamePanel.repaint();
+
+                gamePanel.getGameStatusLbl().setText("You drew a card.");
+                gamePanel.slowDisplayLabel(gamePanel.getGameStatusLbl(), 25);
+            }
+            else {
+                gamePanel.getGameStatusLbl().setText("Overkill.");
+                gamePanel.slowDisplayLabel(gamePanel.getGameStatusLbl(), 25);
+            } 
+        });
+
+        gamePanel.setStandBtnActionListener(e -> {
+            Dealer dealer = gameModel.getDealer();
+            Deck deck = gameModel.getDeck();
+
+            while (!dealer.getCardList().isEmpty() && dealer.getHandTotal() < 17) {
+                dealer.addCard(deck.drawCard());
+                gamePanel.getDealerTotalLbl().setText("Total: ? + " + (dealer.getHandTotal() - dealer.getCard(0).getCardValue()));
+                gamePanel.addImage("cardImages/card" + dealer.getCard(dealer.getCardList().size() - 1).getCardValue() + ".png", gamePanel.getDealerHandPanel());
+
+                gamePanel.revalidate();
+                gamePanel.repaint();
+            }
+
+
         });
     }
 }

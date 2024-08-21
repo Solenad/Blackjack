@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Deck {
 
-    private ArrayList<Card> cardList = new ArrayList<>();
+    private final ArrayList<Card> cardList = new ArrayList<>();
 
     public final void addCard(Card card) {
         cardList.add(card);

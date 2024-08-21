@@ -10,8 +10,8 @@ public class BlackjackView extends JFrame{
     public BlackjackView() {
         setTitle("Blackjack");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setResizable(false);
+        setSize(1000, 600);
+
         getContentPane().setLayout(new CardLayout());
 
         this.mainMenuPanel = new MainMenuPanel();

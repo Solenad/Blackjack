@@ -11,10 +11,10 @@ public class GamePanel extends JPanel {
     private JLabel cardImageLbl;
     private final JLabel playerTitleLbl, playerTotalLbl;
     private final JLabel dealerTitleLbl, dealerTotalLbl;
+    private final JLabel gameStatusLbl;
     private final JPanel playerHandPanel, playerSectionPanel, playerControlPanel;
     private final JPanel dealerHandPanel, dealerSectionPanel;
-    private JButton startBtn, hitBtn, standBtn, exitBtn;
-    private ArrayList<JLabel> cardImageList = new ArrayList<>();
+    private final JButton startBtn, hitBtn, standBtn, exitBtn;
 
     public GamePanel() {
 
@@ -24,6 +24,7 @@ public class GamePanel extends JPanel {
         setBackground(new Color(12,12,14));
 
         // panel initializations
+
         playerSectionPanel = new JPanel(new BorderLayout(5, 5 ));
         playerSectionPanel.setOpaque(false);
         playerSectionPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -41,15 +42,14 @@ public class GamePanel extends JPanel {
         playerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
         playerHandPanel.setOpaque(false);
         playerHandPanel.add(Box.createHorizontalStrut(40));
-        playerHandPanel.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 20));
+        playerHandPanel.setBorder(BorderFactory.createEmptyBorder(10, 50, 10, 0));
         playerSectionPanel.add(playerHandPanel, BorderLayout.CENTER);
 
         playerControlPanel = new JPanel();
         playerControlPanel.setLayout(new BoxLayout(playerControlPanel, BoxLayout.Y_AXIS));
         playerControlPanel.setOpaque(false);
         playerControlPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
-
-        add(playerControlPanel, BorderLayout.EAST);
+        playerControlPanel.add(Box.createVerticalGlue());
 
         dealerSectionPanel = new JPanel(new BorderLayout());
         dealerSectionPanel.setOpaque(false);
@@ -76,6 +76,9 @@ public class GamePanel extends JPanel {
         dealerHandPanel.setAlignmentY(Component.CENTER_ALIGNMENT);
 
 
+        playerSectionPanel.add(playerControlPanel, BorderLayout.EAST);
+
+
         playerTitleLbl = new JLabel("Player");
         playerTitleLbl.setFont(new Font("Monospaced", Font.BOLD, 25));
         playerTitleLbl.setForeground(new Color(223,225,229));
@@ -87,7 +90,6 @@ public class GamePanel extends JPanel {
         playerTotalLbl.setForeground(new Color(223,225,229));
         playerTotalLbl.setAlignmentX(Component.CENTER_ALIGNMENT);
         playerTotalLbl.setAlignmentY(Component.TOP_ALIGNMENT);
-
 
         dealerTitleLbl = new JLabel("Dealer");
         dealerTitleLbl.setFont(new Font("Monospaced", Font.BOLD, 25));
@@ -101,17 +103,24 @@ public class GamePanel extends JPanel {
         dealerTotalLbl.setAlignmentX(Component.RIGHT_ALIGNMENT);
         dealerTotalLbl.setAlignmentY(Component.TOP_ALIGNMENT);
 
+        gameStatusLbl = new JLabel();
+        gameStatusLbl.setFont(new Font("Monospaced", Font.BOLD, 18));
+        gameStatusLbl.setForeground(new Color(223,225,229));
+        gameStatusLbl.setAlignmentX(Component.CENTER_ALIGNMENT);
+
 
         // buttons
         startBtn = new PlayerControlButton("Start");
         hitBtn = new PlayerControlButton("Hit");
         standBtn = new PlayerControlButton("Stand");
         exitBtn = new PlayerControlButton("Exit");
+        exitBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, exitBtn.getPreferredSize().height));
 
         playerControlPanel.add(startBtn);
     }
 
     public void addImage(String imageName, JPanel panel) {
+
         ImageIcon cardImage;
         JLabel cardImageLbl;
 
@@ -120,16 +129,12 @@ public class GamePanel extends JPanel {
 
         panel.add(cardImageLbl);
         panel.add(Box.createHorizontalStrut(20));
-        cardImageList.add(cardImageLbl);
     }
 
     public void removeAllImage() {
-        int i;
 
-        for (i = 0; i < cardImageList.size(); i++) {
-            playerHandPanel.remove(cardImageList.get(i));
-            cardImageList.remove(i);
-        }
+        playerHandPanel.removeAll();
+        dealerHandPanel.removeAll();
     }
 
     public void slowDisplayLabel(JLabel label, int msDelay) {
@@ -150,6 +155,10 @@ public class GamePanel extends JPanel {
             }
         });
         timer.start();
+    }
+
+    public JLabel getGameStatusLbl() {
+        return gameStatusLbl;
     }
 
     public JLabel getPlayerTitleLbl() {
@@ -181,16 +190,35 @@ public class GamePanel extends JPanel {
         startBtn.addActionListener(E);
     }
 
+    public void setHitBtnActionListener(ActionListener E) {
+        hitBtn.addActionListener(E);
+    }
+
+    public void setStandBtnActionListener(ActionListener E) {
+        standBtn.addActionListener(E);
+    }
+
+    public void setExitBtnActionListener(ActionListener E) {
+        exitBtn.addActionListener(E);
+    }
+
     public void setUpControl() {
-        playerControlPanel.remove(startBtn);
+        playerControlPanel.removeAll();
         playerControlPanel.add(hitBtn);
         playerControlPanel.add(standBtn);
+        playerControlPanel.add(Box.createVerticalStrut(50));
         playerControlPanel.add(exitBtn);
-
         playerSectionPanel.add(playerTotalLbl, BorderLayout.NORTH);
         dealerSectionPanel.add(dealerTotalLbl, BorderLayout.SOUTH);
-
-        validate();
+        dealerSectionPanel.add(gameStatusLbl, BorderLayout.EAST);
         repaint();
+        revalidate();
+    }
+
+    public void removeControl() {
+        playerControlPanel.removeAll();
+        playerSectionPanel.remove(playerTotalLbl);
+        dealerSectionPanel.remove(dealerTotalLbl);
+        playerControlPanel.add(startBtn);
     }
 }

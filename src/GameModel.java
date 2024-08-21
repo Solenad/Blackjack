@@ -11,7 +11,6 @@ public class GameModel {
     public GameModel() {
         this.player = new Player("Roe");
         this.dealer = new Dealer("Dealer");
-        setDeck();
     }
 
     // 26 22
@@ -32,9 +31,18 @@ public class GameModel {
     public void setDeck() {
         int i;
 
+        if (!deck.getCardList().isEmpty())
+            deck.getCardList().clear();
+
         for (i = 0; i < 11; i++) {
             deck.addCard(new Card(i + 1));
         }
+    }
+
+    public void clearAllList() {
+        deck.getCardList().clear();
+        player.getCardList().clear();
+        dealer.getCardList().clear();
     }
 
     public void setGame() {

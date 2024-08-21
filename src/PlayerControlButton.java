@@ -13,8 +13,8 @@ public class PlayerControlButton extends JButton {
         setFocusPainted(false);
         setFont(new Font("Monospaced", Font.BOLD, 25));
         setForeground(new Color(223,225,229));
+        setMinimumSize(new Dimension(110, 40));
         setMaximumSize(new Dimension(110, 40));
-        setAlignmentX(Component.RIGHT_ALIGNMENT);
 
         addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent e) {
